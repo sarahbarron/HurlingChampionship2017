@@ -11,6 +11,15 @@ function makeGraphs(error, HurlingStats) {
     HurlingStats.forEach(function (d) {
        d["total_goals"] = +d["total_goals"];
        d["total_points"] = +d["total_points"];
+       d["points_from_play"] = +d["points_from_play"];
+       d["point_from_free"] = +d["point_from_free"];
+       d["point_from_65"] = +d["point_from_65"];
+       d["point_from_sideline"] = +d["point_from_sideline"];
+       d["point_from_penalty"] = +d["point_from_penalty"];
+       d["goal_from_play"] = +d["goal_from_play"];
+       d["goal_from_free"] = +d["goal_from_free"];
+       d["goal_from_penalty"] = +d["goal_from_penalty"];
+       d["playerid"] = +d["playerid"];
     });
 
 
@@ -24,18 +33,22 @@ function makeGraphs(error, HurlingStats) {
         return d['stage_of_all_ireland'];
     });
 
-    //teams
     var teams = ndx.dimension(function (d) {
-        return d['teams'];
+        return d['team'];
     });
 
 
     //grouping data & metrics
-    var numStageOfAllIreland = stageOfAllIreland.group();
-    var totalGoalsGroup = teams.group().reduceSum(function (d) {
-        return d["total_goals"];
-    }) ;
 
+    //adds total goals*3 and total points for each stage of the Championship
+    var numStageOfAllIreland = stageOfAllIreland.group().reduceSum(function (d) {
+        return ((d['total_points'])+(d['total_goals']*3));
+    });
+
+    //total points for each team
+    var teamPoints = teams.group().reduceSum(function (d) {
+        return d['total_points'];
+    });
 
     //Charts
 
@@ -45,22 +58,22 @@ function makeGraphs(error, HurlingStats) {
 
 
     stageOfAllIrelandPieChart
-        .ordinalColors(["#79CED7", "#C96A23", "#D3D1C5", "#F5821F", "#006FC1","#EC2322","#8BC934"])
+        .ordinalColors(["#1689FD", "#E6C229", "#9255AD", "#D11149", "#6610F2","#F17105","#3CD070"])
         .height(400)
-        .radius(100)
+        .radius(150)
         .transitionDuration(1500)
         .dimension(stageOfAllIreland)
         .group(numStageOfAllIreland);
 
 
-    //teams
     teamsChart
-        .width(500)
-        .height(200)
+        .height(400)
+        .width(750)
         .dimension(teams)
-        .group(totalGoalsGroup)
-        .xAxisLabel("2017 Championship Hurling Teams")
-        .yAxisLabel("Each teams - Goals and Points");
+        .group(teamPoints)
+        .x(d3.scale.ordinal().domain(teams))
+        .xAxis().ticks(7);
+
 
     dc.renderAll();
 }
