@@ -71,8 +71,8 @@ function makeGraphs(error, HurlingStats) {
         .width(750)
         .dimension(teams)
         .group(teamPoints)
-        .x(d3.scale.ordinal().domain(teams))
-        .xAxis().ticks(7);
+        .xUnits(dc.units.ordinal) 
+        .x(d3.scale.ordinal().domain(teams));
 
 
     dc.renderAll();
