@@ -50,6 +50,10 @@ function makeGraphs(error, HurlingStats) {
         return d['total_points'];
     });
 
+    var teamGoals = teams.group().reduceSum(function (d) {
+        return d['total_goals'];
+    });
+
     //Charts
 
     //stage of all ireland
@@ -67,11 +71,14 @@ function makeGraphs(error, HurlingStats) {
 
 
     teamsChart
+        .ordinalColors(["#006BA8", "#CD281A", "#9CAACC","#9C1E0C", "#008931", "#000000", "#005D9F", "#00943D", "#00933A",
+        "#008D3E","#0068A9", "#006BA8", "#8A211D", "#8B274C"])
         .height(400)
         .width(750)
         .dimension(teams)
         .group(teamPoints)
-        .xUnits(dc.units.ordinal) 
+        .stack(teamGoals)
+        .xUnits(dc.units.ordinal)
         .x(d3.scale.ordinal().domain(teams));
 
 
