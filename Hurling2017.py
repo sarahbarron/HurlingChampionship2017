@@ -37,7 +37,7 @@ def hurling_projects():
         'point_from_sideline': True, 'point_from_penalty': True,
         'goal_from_play': True, 'goal_from_free': True,
         'goal_from_penalty': True, 'total_goals': True,
-        'total_points': True,
+        'total_points': True, 'score_breakdown': True
     }
 
     # Open a connection to MongoDB using a with statement such that the
