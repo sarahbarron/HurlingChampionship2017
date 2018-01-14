@@ -8,6 +8,7 @@ function makeGraphs(error, HurlingStats) {
         throw error;
     }
 
+
     HurlingStats.forEach(function (d) {
         d["total_goals"] = +d["total_goals"];
         d["total_points"] = +d["total_points"];
@@ -19,7 +20,6 @@ function makeGraphs(error, HurlingStats) {
         d["goal_from_play"] = +d["goal_from_play"];
         d["goal_from_free"] = +d["goal_from_free"];
         d["goal_from_penalty"] = +d["goal_from_penalty"];
-        d["playerid"] = +d["playerid"];
     });
 
 
@@ -27,10 +27,7 @@ function makeGraphs(error, HurlingStats) {
     var ndx = crossfilter(HurlingStats);
 
 
-    //  ******************************    GENERAL STATISTICS    ********************************
-
     //  DIMENSIONS
-
     //Teams BarChart dimensions
     var teams = ndx.dimension(function (d) {
         return d['team'];
@@ -38,7 +35,6 @@ function makeGraphs(error, HurlingStats) {
 
     //stage of all ireland Pie chart dimensions
     var stageOfAllIreland = ndx.dimension(function (d) {
-
         return d['stage_of_all_ireland'];
     });
 
@@ -47,20 +43,9 @@ function makeGraphs(error, HurlingStats) {
         return d['score_breakdown'];
     });
 
-
     //Player dropdown list dimensions
     var players = ndx.dimension(function (d) {
         return (d['team'] + " - " + d['first_name'] + " " + d['surname']);
-    });
-
-   //players bar chart dimensions
-    var playersBar = ndx.dimension(function (d) {
-        return (d['first_name'] + " " + d['surname']);
-    });
-    var playerBarTop = playersBar.top(20);
-    // total goals number display dimensions
-    var totalGoals = ndx.dimension(function (d) {
-        return d['total_goals'];
     });
 
     //total points number display dimensions
@@ -68,9 +53,12 @@ function makeGraphs(error, HurlingStats) {
         return d['total_points'];
     });
 
+    //total points number display dimensions
+    var totalGoals = ndx.dimension(function (d) {
+        return d['total_goals'];
+    });
 
     //GROUPING
-
     //stage of all ireland pie chart grouping
     var numStageOfAllIreland = stageOfAllIreland.group().reduceSum(function (d) {
         return ((d['total_points']) + (d['total_goals']));
@@ -135,14 +123,11 @@ function makeGraphs(error, HurlingStats) {
     });
 
     //player rowchart points from play
-
-
     var playerTotalScore = players.group().reduceSum(function (d) {
         return ((d['total_points'])+(d['total_goals']));
     });
 
     //Charts
-
     //stage of all ireland
     var stageOfAllIrelandPieChart = dc.pieChart("#stage-of-all-ireland-chart");
     var scoreBreakdownChart = dc.pieChart("#score-breakdown");
@@ -152,42 +137,44 @@ function makeGraphs(error, HurlingStats) {
     var totalGoalsND = dc.numberDisplay("#total-goals-nd");
     var totalPointsND = dc.numberDisplay("#total-points-nd");
 
-
-
     stageOfAllIrelandPieChart
         .ordinalColors(["#1689FD", "#E6C229", "#9255AD", "#D11149", "#6610F2", "#F17105", "#3CD070"])
         .height(180)
-        .width(350)
+        .width(400)
         .radius(90)
         .transitionDuration(1500)
         .dimension(stageOfAllIreland)
-        .group(numStageOfAllIreland);
+        .group(numStageOfAllIreland)
+        .legend(dc.legend().x(1).y(1).itemHeight(12).gap(5));
 
     scoreBreakdownChart
         .ordinalColors(["#fd07e4", "#E6C229", "#9255AD", "#D11149", "#6610F2", "#F17105", "#3CD070", "#B1D5E7"])
         .height(180)
-        .width(350)
+        .width(400)
         .radius(90)
         .transitionDuration(1500)
         .dimension(scoreBreakdown)
-        .group(numScoreBreakdown);
+        .group(numScoreBreakdown)
+        .legend(dc.legend().x(1).y(1).itemHeight(13).gap(5));
 
     teamsChart
         .ordinalColors(["#3cd070", "#6610f2", "#d11149", "#b1d5e7", "#f17105", "#9255ad", "#e6c229", "#FD07E4"])
         .height(350)
-        .width(900)
+        .width(850)
         .dimension(teams)
-        .group(teamPointsFromPlay)
-        .stack(teamPointFromFree)
-        .stack(teamPointFrom65)
-        .stack(teamPointFromSideline)
-        .stack(teamPointFromPenalty)
-        .stack(teamGoalFromPlay)
-        .stack(teamGoalFromPenalty)
-        .stack(teamGoalFromFree)
+        .group(teamPointsFromPlay, 'Pts from play')
+        .stack(teamPointFromFree, 'Pts from free')
+        .stack(teamPointFrom65, 'Pts from a 65')
+        .stack(teamPointFromSideline, 'Pts from sideline')
+        .stack(teamPointFromPenalty,'Pt from Penalty')
+        .stack(teamGoalFromPlay,'Goals from play')
+        .stack(teamGoalFromPenalty, 'Goals from penalty')
+        .stack(teamGoalFromFree,'Goal from free')
         .xUnits(dc.units.ordinal)
         .x(d3.scale.ordinal().domain(teams))
-        .transitionDuration(3000);
+        .transitionDuration(3000)
+        .legend(dc.legend().x(50).y(10).itemHeight(8).gap(4))
+        .brushOn(false);
 
     playersChart
         .height(4000)
@@ -209,11 +196,6 @@ function makeGraphs(error, HurlingStats) {
         .formatNumber(d3.format("d"))
         .group(numTotalPoints)
         .height(500);
-
-
-
-
-
 
     dc.renderAll();
 }

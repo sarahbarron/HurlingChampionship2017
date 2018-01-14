@@ -1,31 +1,69 @@
-.container-fluid{
-    background-image: url("pictures/beechHurling.jpg");
-    background-size: cover;
+.div.navbar-header{
+    align-content: center;
 }
 
+/*the picture at the start of the project*/
+
+.firstPic{
+  max-height: 747px;
+  width: 100%;
+}
+
+/*background picture*/
+.container-fluid{
+    background-image: url("pictures/grass.jpg");
+    background-size: 100%;
+    background-repeat: repeat;
+}
+#mynav{
+    background-image: url("pictures/background.jpg");
+    background-size: cover;
+}
+/*set the fond and colours for the entire application*/
 body.application{
     background-color: black;
-    padding: 60px 20px;
+    padding: 0px 10px;
     font-family:  focoregular;
 }
+
+/*navigation bar header*/
 .navbar-header{
     width: 645px;
     margin: auto;
 }
 
+/* navigation bar link wrap word when screen is minimised*/
 a.navbar-brand{
     word-wrap: break-word;
+    padding-bottom: 50px;
 }
 
+/* the wrapper for the charts*/
 .chart-wrapper .chart-title{
     font-size: 20px;
     text-align: center;
 }
+
+/*navigation bar brand*/
 .navbar-brand{
+    width:85%;
     font-size:40px;
     padding:20px 0px 10px 0px;
+    text-align: center;
 }
 
+button{
+    height: 40px;
+    width: 200px;
+    align:right;
+    margin-top: 20px;
+    border-radius: 20px;
+    background-color: #00FF61;
+    color:black;
+    font-size: 20px;
+    padding-bottom: 20px;
+}
+/*Total Goals & Total Points Number display*/
 .numberDisplay{
     background: #33CC99;
     position: relative;
@@ -38,24 +76,35 @@ a.navbar-brand{
 
 }
 
+/*player dropdown menu*/
 .dc-select-menu{
     height: 41px;
     background-color: #6610f2;
     font-size: 20px;
     color: white;
     border-radius: 15px;
-    margin: auto;
 }
 
-/*compare 2 teams*/
-#team1-dropdown, #team2-dropdown{
-    padding:20px;
-}
-
+/*Number display*/
 .numDispDiv{
-    margin-top: 20px;
-    margin-bottom: 10px;
+
+    margin-bottom: 30px;
 }
+
+/*the div for the select player*/
 .selectPlayerDiv{
     margin-bottom: 20px;
+}
+
+/*font colour of the players on the line graph*/
+.dc-chart g.row text {
+    fill: #1d2c4b;
+}
+
+#teams{
+    margin-top: 30px;
+}
+
+#startCharts{
+    padding:120px 50px;
 }
