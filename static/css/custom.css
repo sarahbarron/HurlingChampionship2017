@@ -17,6 +17,7 @@
 }
 #mynav{
     background-image: url("pictures/background.jpg");
+    opacity: 0.7;
     background-size: cover;
 }
 /*set the fond and colours for the entire application*/

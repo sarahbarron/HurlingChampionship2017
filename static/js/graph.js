@@ -69,48 +69,15 @@ function makeGraphs(error, HurlingStats) {
         return ((d['total_points']) + (d['total_goals']));
     });
 
-    //Teams barchart points from play grouping
-    var teamPointsFromPlay = teams.group().reduceSum(function (d) {
-        return d['points_from_play'];
+    //Teams barchart total points grouping
+    var teamPoints = teams.group().reduceSum(function (d) {
+        return d['total_points'];
     });
 
-    //Teams barchart point from free - stack
-    var teamPointFromFree = teams.group().reduceSum(function (d) {
-        return d['point_from_free'];
+    //Teams barchart total goals - stack
+    var teamGoals = teams.group().reduceSum(function (d) {
+        return d['total_goals'];
     });
-
-    //team barchart points from 65 - stack
-    var teamPointFrom65 = teams.group().reduceSum(function (d) {
-        return d['point_from_65'];
-    });
-
-    //team barchart points from sideline - stack
-    var teamPointFromSideline = teams.group().reduceSum(function (d) {
-        return d['point_from_sideline'];
-    });
-
-    //team barchart points from penalty - stack
-    var teamPointFromPenalty = teams.group().reduceSum(function (d) {
-        return d['point_from_penalty'];
-    });
-
-    //team barchart goals from play - stack
-    var teamGoalFromPlay = teams.group().reduceSum(function (d) {
-        return d['goal_from_play'];
-    });
-
-    //team goals from play - stack
-    var teamGoalFromFree = teams.group().reduceSum(function (d) {
-        return d['goal_from_free'];
-    });
-
-    //team goals from penalty - stack
-    var teamGoalFromPenalty = teams.group().reduceSum(function (d) {
-        return d['goal_from_penalty'];
-    });
-
-    //players dropdown list group
-    var listPlayers = players.group();
 
     //total goals number display goals
     var numTotalGoals = totalGoals.group().reduceSum(function (d) {
@@ -133,7 +100,6 @@ function makeGraphs(error, HurlingStats) {
     var scoreBreakdownChart = dc.pieChart("#score-breakdown");
     var teamsChart = dc.barChart("#teams-chart");
     var playersChart = dc.rowChart("#players-chart");
-    var selectPlayer = dc.selectMenu("#player-dropdown");
     var totalGoalsND = dc.numberDisplay("#total-goals-nd");
     var totalPointsND = dc.numberDisplay("#total-points-nd");
 
@@ -162,14 +128,8 @@ function makeGraphs(error, HurlingStats) {
         .height(350)
         .width(850)
         .dimension(teams)
-        .group(teamPointsFromPlay, 'Pts from play')
-        .stack(teamPointFromFree, 'Pts from free')
-        .stack(teamPointFrom65, 'Pts from a 65')
-        .stack(teamPointFromSideline, 'Pts from sideline')
-        .stack(teamPointFromPenalty,'Pt from Penalty')
-        .stack(teamGoalFromPlay,'Goals from play')
-        .stack(teamGoalFromPenalty, 'Goals from penalty')
-        .stack(teamGoalFromFree,'Goal from free')
+        .group(teamPoints, 'Points Scored')
+        .stack(teamGoals, 'Goals Scored')
         .xUnits(dc.units.ordinal)
         .x(d3.scale.ordinal().domain(teams))
         .transitionDuration(3000)
@@ -182,10 +142,6 @@ function makeGraphs(error, HurlingStats) {
         .dimension(players)
         .group(playerTotalScore)
         .ordering(function(d) { return -d.value });
-
-    selectPlayer
-        .dimension(players)
-        .group(listPlayers);
 
     totalGoalsND
         .formatNumber(d3.format("d"))
