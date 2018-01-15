@@ -23,7 +23,7 @@
 /*set the fond and colours for the entire application*/
 body.application{
     background-color: black;
-    padding: 0px 10px;
+    padding: 0px 0px;
     font-family:  focoregular;
 }
 
@@ -69,43 +69,25 @@ button{
     background: #33CC99;
     position: relative;
     font-size: 29px;
-    color: white;
+    color: #383d43;
     vertical-align: middle;
     text-align: center;
     padding-top: 12px;
     padding-bottom: 0px;
+    display: grid;
 
-}
-
-/*player dropdown menu*/
-.dc-select-menu{
-    height: 41px;
-    background-color: #6610f2;
-    font-size: 20px;
-    color: white;
-    border-radius: 15px;
 }
 
 /*Number display*/
 .numDispDiv{
-
     margin-bottom: 30px;
-}
-
-/*the div for the select player*/
-.selectPlayerDiv{
-    margin-bottom: 20px;
 }
 
 /*font colour of the players on the line graph*/
 .dc-chart g.row text {
     fill: #1d2c4b;
 }
-
-#teams{
-    margin-top: 30px;
-}
-
+/*padding before*/
 #startCharts{
-    padding:120px 50px;
+    padding:0px 50px;
 }

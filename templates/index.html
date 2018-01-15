@@ -15,7 +15,7 @@
       <div>
         <a class="navbar-brand" href="./">All Ireland Hurling Championship 2017</a>
       </div>
-      <div data-step="8" data-intro="NOTE:<br>1. If you make a selection, or make more
+      <div data-step="7" data-intro="NOTE:<br>1. If you make a selection, or make more
         than one selection, these will remain selected until you, click on them again.<br> You can also
         reset all graphs by clicking on the title of the webpage <em>'All Ireland Hurling Championship 2017'</em>
         <br> 2. To view score statistics just hover over the pie sections on the pie charts, or hover over the bars
@@ -35,44 +35,10 @@
       <div class="col-sm-12">
         <div class="row" id="startCharts" >
 
-          <!-- Stage Of Championship Pie -->
-          <div class="col-lg-4">
-            <div class="chart-wrapper">
-              <div class="chart-title">
-                Stage Of Championship
-              </div>
-              <div class="chart-stage" data-step="3" data-intro="This Pie Chart shows the different stages of the 2017
-                  All Ireland Hurling Championship: <br> Leinster stage 1,2 & 3, Leinster finals, Munster, Qualifiers,
-                  Quarter Finals, Semi Finals & Final.<br>Click on a stage on the chart to see on the
-                  corresponding graphs:<br>1. How many goals and points were scored during this stage.<br>2. The breakdown
-                  of scores eg. from play, free etc. scored during this stage<br>3. What teams scored during this stage &
-                  their score breakdown<br>4.What players scored and how many scores they got at this stage"
-                  style="font-weight: normal" data-position="right">
-                <div id="stage-of-all-ireland-chart"></div>
-              </div>
-            </div>
-          </div>
 
-          <!-- Score Breakdown -->
-          <div class="col-lg-4">
-            <div class="chart-wrapper">
-              <div class="chart-title">
-                Score Breakdown
-              </div>
-              <div class="chart-stage" data-step="4" data-intro="This Pie chart shows a breakdown of all scores.
-                It shows goals from play, free, penalty and points from play, free, 65, sideline & penalty<br>
-                Click on a score type to see on the corresponding charts:<br>1. At what stage of the competition this
-                type of score was made<br> 2. A total of how many of this type of score was made<br>3. What teams scored
-                this type of score<br>4. What players scored this type of score" style="font-weight: normal"
-                data-position="right">
-
-                <div id="score-breakdown"></div>
-              </div>
-            </div>
-          </div>
 
           <!-- Total Goals Number Display-->
-          <div class="col-lg-2 numDispDiv">
+          <div class="col-lg-6 numDispDiv">
             <div class="chart-wrapper">
               <div class="chart-title">
                 Total Goals
@@ -85,10 +51,10 @@
               </div>
             </div>
           </div>
+          <!-- END total Goals number display -->
 
-
-      <!-- Metric 2 -->
-          <div class="col-lg-2 col-sm-3 numDispDiv">
+          <!-- Points Number Display -->
+          <div class="col-lg-6 col-sm-3 numDispDiv">
             <div class="chart-wrapper">
               <div class="chart-title">
                 Total Points
@@ -101,12 +67,12 @@
               </div>
             </div>
           </div>
-          <!-- Metric 2 -->
+          <!-- END Points number display -->
 
-          <!-- players-->
-          <div id="teams" class="col-lg-5 col-sm-12">
+            <!-- players-->
+          <div class="col-lg-5 col-sm-12">
             <div class="chart-wrapper">
-              <div class="chart-title" data-step="6" data-intro="This shows all the players who scored during 2017.
+              <div class="chart-title" data-step="3" data-intro="This shows all the players who scored during 2017.
                 It shows them in descending order from top scorer down. Select a player to see on the corresponding
                 graphs:<br>1. At what stage of the competition they scored<br>2. A breakdown of the type of score they
                 scored<br>3.The total number of goals & points they scored<br>4. The team they scored for.<br>"
@@ -118,14 +84,52 @@
               </div>
             </div>
           </div>
+          <!-- end players row chart-->
 
-          <!-- Teams -->
-          <div id="teams" class="col-lg-7 col-sm-12">
+          <!-- Stage Of Championship Pie -->
+          <div class="col-lg-4">
+            <div class="chart-wrapper">
+              <div class="chart-title">
+                Stage Of Championship
+              </div>
+              <div class="chart-stage" data-step="4" data-intro="This Pie Chart shows the different stages of the 2017
+                  All Ireland Hurling Championship: <br> Leinster stage 1,2 & 3, Leinster finals, Munster, Qualifiers,
+                  Quarter Finals, Semi Finals & Final.<br>Click on a stage on the chart to see on the
+                  corresponding graphs:<br>1. How many goals and points were scored during this stage.<br>2. The breakdown
+                  of scores eg. from play, free etc. scored during this stage<br>3. What teams scored during this stage &
+                  their score breakdown<br>4.What players scored and how many scores they got at this stage"
+                  style="font-weight: normal" data-position="right">
+                <div id="stage-of-all-ireland-chart"></div>
+              </div>
+            </div>
+          </div>
+          <!-- END Stage of All Ireland -->
+
+          <!-- Score Breakdown -->
+          <div class="col-lg-3">
+            <div class="chart-wrapper">
+              <div class="chart-title">
+                Score Breakdown
+              </div>
+              <div class="chart-stage" data-step="5" data-intro="This Pie chart shows a breakdown of all scores.
+                It shows goals from play, free, penalty and points from play, free, 65, sideline & penalty<br>
+                Click on a score type to see on the corresponding charts:<br>1. At what stage of the competition this
+                type of score was made<br> 2. A total of how many of this type of score was made<br>3. What teams scored
+                this type of score<br>4. What players scored this type of score" style="font-weight: normal"
+                data-position="right">
+                <div id="score-breakdown"></div>
+              </div>
+            </div>
+          </div>
+          <!-- END score breakdown -->
+
+            <!-- Teams -->
+          <div class="col-lg-7 col-sm-12">
             <div class="chart-wrapper">
               <div class="chart-title">
                   Teams in the 2017 Hurling Championship
               </div>
-              <div class="chart-stage" data-step="7" data-intro="This chart shows all teams who played in the 2017 All
+              <div class="chart-stage" data-step="6" data-intro="This chart shows all teams who played in the 2017 All
                 Ireland Hurling Championship.<br>Click on a team to see on the corresponding graphs<br> 1. the stage of
                 the competition the team played in<br>2. A breakdown of the type of scores the team got. <br> 3. The total
                 number of goals and points the team got<br> 4. The players who scored for the team & how much each player

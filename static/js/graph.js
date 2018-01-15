@@ -106,7 +106,7 @@ function makeGraphs(error, HurlingStats) {
     stageOfAllIrelandPieChart
         .ordinalColors(["#1689FD", "#E6C229", "#9255AD", "#D11149", "#6610F2", "#F17105", "#3CD070"])
         .height(180)
-        .width(400)
+        .width(500)
         .radius(90)
         .transitionDuration(1500)
         .dimension(stageOfAllIreland)
