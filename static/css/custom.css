@@ -15,6 +15,7 @@
     background-size: 100%;
     background-repeat: repeat;
 }
+
 #mynav{
     background-image: url("pictures/background.jpg");
     opacity: 0.7;
@@ -41,7 +42,7 @@ a.navbar-brand{
 
 /* the wrapper for the charts*/
 .chart-wrapper .chart-title{
-    font-size: 20px;
+    font-size: 30px;
     text-align: center;
 }
 
@@ -68,19 +69,21 @@ button{
 .numberDisplay{
     background: #33CC99;
     position: relative;
-    font-size: 29px;
-    color: #383d43;
+    font-size: 50px;
+    color: floralwhite;
     vertical-align: middle;
     text-align: center;
     padding-top: 12px;
     padding-bottom: 0px;
     display: grid;
-
+    height: 200px;
 }
-
+div#total-goals-nd.dc-chart element.style{
+    padding-top: 30px;
+}
 /*Number display*/
 .numDispDiv{
-    margin-bottom: 30px;
+    margin-bottom: 100px;
 }
 
 /*font colour of the players on the line graph*/
@@ -90,4 +93,13 @@ button{
 /*padding before*/
 #startCharts{
     padding:0px 50px;
+}
+
+.chart-wrapper .chart-title{
+    background-color: darkslategray;
+    color: floralwhite;
+}
+
+.col-lg-7{
+    margin-bottom: 100px;
 }

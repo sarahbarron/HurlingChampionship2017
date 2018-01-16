@@ -105,9 +105,9 @@ function makeGraphs(error, HurlingStats) {
 
     stageOfAllIrelandPieChart
         .ordinalColors(["#1689FD", "#E6C229", "#9255AD", "#D11149", "#6610F2", "#F17105", "#3CD070"])
-        .height(180)
-        .width(500)
-        .radius(90)
+        .height(550)
+        .width(800)
+        .radius(250)
         .transitionDuration(1500)
         .dimension(stageOfAllIreland)
         .group(numStageOfAllIreland)
@@ -115,17 +115,17 @@ function makeGraphs(error, HurlingStats) {
 
     scoreBreakdownChart
         .ordinalColors(["#fd07e4", "#E6C229", "#9255AD", "#D11149", "#6610F2", "#F17105", "#3CD070", "#B1D5E7"])
-        .height(180)
-        .width(400)
-        .radius(90)
+        .height(550)
+        .width(800)
+        .radius(250)
         .transitionDuration(1500)
         .dimension(scoreBreakdown)
         .group(numScoreBreakdown)
-        .legend(dc.legend().x(1).y(1).itemHeight(13).gap(5));
+        .legend(dc.legend().x(1).y(1).itemHeight(20).gap(5));
 
     teamsChart
         .ordinalColors(["#3cd070", "#6610f2", "#d11149", "#b1d5e7", "#f17105", "#9255ad", "#e6c229", "#FD07E4"])
-        .height(350)
+        .height(600)
         .width(850)
         .dimension(teams)
         .group(teamPoints, 'Points Scored')
@@ -133,7 +133,7 @@ function makeGraphs(error, HurlingStats) {
         .xUnits(dc.units.ordinal)
         .x(d3.scale.ordinal().domain(teams))
         .transitionDuration(3000)
-        .legend(dc.legend().x(50).y(10).itemHeight(8).gap(4))
+        .legend(dc.legend().x(50).y(10).itemHeight(20).gap(8))
         .brushOn(false);
 
     playersChart
@@ -146,12 +146,12 @@ function makeGraphs(error, HurlingStats) {
     totalGoalsND
         .formatNumber(d3.format("d"))
         .group(numTotalGoals)
-        .height(500);
+        .height(1500);
 
     totalPointsND
         .formatNumber(d3.format("d"))
         .group(numTotalPoints)
-        .height(500);
+        .height(1500);
 
     dc.renderAll();
 }
