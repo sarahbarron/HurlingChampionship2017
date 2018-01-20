@@ -29,14 +29,9 @@ def hurling_projects():
     # A constant that defines the record fields that we wish to retrieve.
     FIELDS = {
         '_id': False, 'first_name': True, 'surname': True,
-        'team': True, 'stage_of_all_ireland': True,
-        'game_no': True, 'won_lost': True, 'games': True,
-        'opposition': True, 'score_breakdown': True, 'points_from_play': True,
-        'point_from_free': True, 'point_from_65': True,
-        'point_from_sideline': True, 'point_from_penalty': True,
-        'goal_from_play': True, 'goal_from_free': True,
-        'goal_from_penalty': True, 'total_goals': True,
-        'total_points': True,
+        'team': True, 'stage_of_all_ireland': True, 'date': True,
+        'games': True, 'score_breakdown': True, 'total_goals': True,
+        'total_points': True
     }
 
     # Open a connection to MongoDB using a with statement such that the
