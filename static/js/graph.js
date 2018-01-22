@@ -144,7 +144,7 @@ function makeGraphs(error, HurlingStats) {
         .width(600)
         .dimension(playersDim)
         .group(playerTotalScoreGroup)
-        .ordering(function(d) { return -d.value })
+        .ordering(function(d) { return -d.value });
 
 
     totalGoalsND
@@ -157,7 +157,10 @@ function makeGraphs(error, HurlingStats) {
         .group(totalPointsGroup)
         .height(1500);
 
-    var gamesDim = ndx.dimension(function(d) {return d["games"];});
+    var gamesDim = ndx.dimension(function(d) {
+        return d["teams"];
+    });
+
 
     gamesTable
         .dimension(gamesDim)
@@ -166,7 +169,7 @@ function makeGraphs(error, HurlingStats) {
             function(d) {return d['games'];}
         ])
         .order(d3.descending)
-        .size(27);
+        .size(500);
 
     dc.renderAll();
 }
