@@ -9,7 +9,7 @@
 
 ## THE NEEDS THIS PROJECT FULFILLS
 
-##### There is in the region of 2,300 clubs in Ireland and 330 worldwide. Members from clubs are always interested and love to discuss games and statistics are becoming a big part of the game.
+##### There is in the region of 2,300 clubs in Ireland and 330 worldwide. Members from clubs are always interested and love to discuss games and statistics, and statistics are becoming a big part of the game.
 ##### While county teams have private statistics, this project provides the general member the opportunity to interact with my graphs to check the score statistics for the 2017 Hurling Championship.
 
 ## FUNCTIONALITY
@@ -27,7 +27,7 @@
 ###### - The 1st Pie Chart shows the stages of the Championship. Every year the championship is made up of Leinster 1,2 and 3, Leinster final stages, Munster, Qualifiers, Quarter final, Semi final and final
 ###### When you click on a stage of the Championship - the interactive graphs will show you the players who scored, the number of goals and points, the breakdown of scores and the games played during this stage of the Championship.
 ###### - The 2nd Pie Chart shows a breakdown of all ways a point or goal can be scored. (in play, free, penalty, 65, and sideline).
-###### When you click on a score type - the interactive graphs will show you the players who scored this type of score and how many of this type they scored. The total number of this type of score was scored in goals and points number display, the stage of the competition this type of score was scored in and the games this type of score was scored in.
+###### When you click on a score type - the interactive graphs be update to show for this type of score - which players scored them, how many goals or points were scored this way, the stage of the championship and the games they were scored in.
 ##### 1 dataTable - This shows a list of the games which took place in the 2017 Championship and the results of the game.
 ###### When you click on the game the interactive graphs show the players that scored in this game, the total number of goals and points, the stage of the championship, and the breakdown of scores for this game.
 
