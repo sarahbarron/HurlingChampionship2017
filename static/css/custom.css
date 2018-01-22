@@ -120,8 +120,10 @@ table {
 
 /*table*/
 th, td {
-    padding: 8px;
+    padding: 14px 200px;
     text-align: left;
+    font-size: 16px;
+    letter-spacing: 2px;
     border-bottom: 1px solid #ddd;
 }
 /*hover over row*/

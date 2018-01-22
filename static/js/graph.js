@@ -157,19 +157,16 @@ function makeGraphs(error, HurlingStats) {
         .group(totalPointsGroup)
         .height(1500);
 
-    var gamesDim = ndx.dimension(function(d) {
-        return d["teams"];
+   var gamesDim = ndx.dimension(function(d) {
+        return d["games"];
     });
 
 
     gamesTable
         .dimension(gamesDim)
-        .group(function (d) {return d['date']; })
-        .columns([
-            function(d) {return d['games'];}
-        ])
-        .order(d3.descending)
-        .size(500);
+        .group(function (d) {return d['games']; })
+        .order(d3.ascending)
+        .size(1174);
 
     dc.renderAll();
 }
