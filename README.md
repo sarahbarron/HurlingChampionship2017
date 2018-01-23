@@ -15,10 +15,10 @@
 ## FUNCTIONALITY
 
 ##### The Project is on one webpage. 
-##### On the navigation bar there is a start tutorial button which invites users to a quick tour of the page.
+##### On the navigation bar there is a start tour button which invites users to a quick tour of the page.
 ##### The page consists of:
 ##### 1 line graph - This is the players statistics. This is a list of all players who scored in the 2017 Hurling Championship. It is ascending from the player who scored the most down the player who scored the least.
-###### When you click on a player you can see on the corresponding graphs - how many goals and points they scored, in which stage of the competition they scored, the breakdown of their scores and the games they scored in.
+###### When you click on a player you can see on the corresponding graphs - how many goals and points they scored, in which stage of the competition they scored, the breakdown of their scores, the team they scored for and the games they scored in.
 ##### 2 Number Displays 
 ###### - The first Number Display shows how many goals were scored.
 ###### - The second Number Display shows how many points were scored.
@@ -29,13 +29,13 @@
 ###### - The 2nd Pie Chart shows a breakdown of all ways a point or goal can be scored. (in play, free, penalty, 65, and sideline).
 ###### When you click on a score type - the interactive graphs will update to show for this type of score - which players scored them, how many goals or points were scored this way, the stage of the championship and the games they were scored in.
 ##### 1 dataTable - This shows a list of the games which took place in the 2017 Championship and the results of the game.
-###### When you click on the game the interactive graphs show the players that scored in this game, the total number of goals and points, the stage of the championship, and the breakdown of scores for this game.
+###### When a player, team, stage of competition, or score breakdown is clicked this dataTable will update to correspond to your selection.
 
 ## TECHNOLOGIES USED
 
 ##### PyCharm - The editor I used to write my html, CSS, JavaScript, Python and README files.
 ##### Bootstrap - A framework for developing responsive, mobile 1st websites.
-##### Languages - HTML, CSS, JavaScript & Phyton.
+##### Languages - HTML, CSS, JavaScript and Python.
 ##### D3.js - A JavaScript based visualisation engine, which I used to render the interactive charts and graphs based on my data.
 ##### Dc.js - A JavaScript based wrapper library for D3.js. I used this for plotting my graphs and charts
 ##### Dc.css - The styling for my Dc.js charts
@@ -45,9 +45,9 @@
 ##### Mongo DB - Database used to present my data in JSON format.
 ##### Flask - A python based micro-framework used to serve my data from the server to my web based interface.
 ##### Heroku - The platform i used to deploy my project on
-##### TinyPNG - to compress photos.
-##### JS Hint - to validate the JavaScript files.
-##### W3C - to validate the HTML and CSS files.
+##### TinyPNG - To compress photos.
+##### JS Hint - To validate the JavaScript files.
+##### W3C - To validate the HTML and CSS files.
 
 
 ## HOW THE PROJECT WAS TESTED
@@ -71,7 +71,7 @@
 - [JS Hint](http://jshint.com/) for JavaScript.
 
 ## Some problems that arose and how I resolved them
-##### dataTable -
+##### dataTable - I had problems trying to get the dataTable to show just 1 instance of each game. Having read the documentation for Dc.js datatable i discovered they were slightly different to other Dc.js charts. The group attribute is used as a keying function for nesting and crossfilters can not be passed to it, the documentation also stated a group could be passed to the dimension attribute. In my dataTable I wanted to show a list of the 27 games played in the 2017 Hurling Championship, however when i created a games dimension the resulting dataTable had 1173 rows showing each game numerous times. When i tried to group the games and pass it to the dimension attribute the result was a dataTable with 1 line saying 'undefined'. With the help of my Tutor Yoni Lavi he informed me of a trick to omit the column attribute from the graph. When i omited the column, it gave me just 1 instance of each game but some games were missing, to fix this I need set the size of the dataTable to 1173 the size of my database. This gave me a list of all 27 games played in 2017
 
 ## WORK BASED OFF OTHER CODE
 ##### I didn't base my work off other code, I used only what i had learnt in my course and the official documentation for dc.js dataTable's
