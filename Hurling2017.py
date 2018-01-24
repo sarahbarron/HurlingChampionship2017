@@ -2,17 +2,13 @@ from flask import Flask
 from flask import render_template
 from pymongo import MongoClient
 import json
+import os
 
 app = Flask(__name__)
 
-# the host - localhost
-db_host = 'localhost'
-# the port to open
-db_port = 27017
-# the database name to be used
-db_name = 'Hurling_Championship'
-# the collection name to be used
-col_name = '2017'
+MONGO_URI = os.getenv('MONGODB_URI', 'mongodb://localhost:27017')
+DBS_NAME = os.getenv('MONGO_DB_NAME', 'Hurling_Championship')
+COLLECTION_NAME = 'HurlingChampionship2017'
 
 
 # when you tpye localhost:5000 into the browser - index() gets called
@@ -38,9 +34,9 @@ def hurling_projects():
 
     # Open a connection to MongoDB using a with statement
     # The connection will close as soon as we exit the with statement
-    with MongoClient(db_host, db_port) as conn:
+    with MongoClient(MONGO_URI) as conn:
         # the collection we want to access is the Hurling_Championship/2017
-        collection = conn[db_name][col_name]
+        collection = conn[DBS_NAME][COLLECTION_NAME]
         # Retrieve a result set that we have defined in columns above (everything except the date & _id)
         # and limit the the results to 1200
         hurlingstats = collection.find(projection=columns, limit=1200)
