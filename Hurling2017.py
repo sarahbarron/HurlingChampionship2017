@@ -32,15 +32,14 @@ def hurling_projects():
         'total_points': True
     }
 
-    # Open a connection to MongoDB using a with statement
-    # The connection will close as soon as we exit the with statement
+    # Open a connection to Mongo URI
     with MongoClient(MONGO_URI) as conn:
-        # the collection we want to access is the Hurling_Championship/2017
+        # the collection we want to access
         collection = conn[DBS_NAME][COLLECTION_NAME]
         # Retrieve a result set that we have defined in columns above (everything except the date & _id)
-        # and limit the the results to 1200
+        # and limit the results to 1200
         hurlingstats = collection.find(projection=columns, limit=1200)
-        # Convert projects to a list in a JSON object and return the JSON data
+        # Convert the collection to a list in a JSON object and return the JSON data
         return json.dumps(list(hurlingstats))
 
 
