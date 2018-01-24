@@ -44,7 +44,8 @@
 ##### keen.js - A dashboard template library.
 ##### Mongo DB - Database used to present my data in JSON format.
 ##### Flask - A python based micro-framework used to serve my data from the server to my web based interface.
-##### Heroku - The platform i used to deploy my project on
+##### Heroku - The platform i used to deploy my project on.
+##### mLab - Cloud hosted MongoDB, to host and monitor my database 24/7 and provide backups.
 ##### TinyPNG - To compress photos.
 ##### JS Hint - To validate the JavaScript files.
 ##### W3C - To validate the HTML and CSS files.
@@ -62,7 +63,7 @@
 - everything loaded properly
 - when i selected an element on each graph the corresponding graphs responded and showed accurate statistics.
 
-##### In the developer tools I tested that the website was responsive in tablet and mobile mode.
+##### In the developer tools I tested that the website was responsive in tablet and mobile mode and again when the project was deployed I tested on my mobile, tablet and laptop that the website was responsive.
 
 ##### I ran all my files through a validation test using
 - [W3C](https://validator.w3.org/) for HTML.
@@ -70,16 +71,35 @@
 - [JS Hint](http://jshint.com/) for JavaScript.
 
 ## Some problems that arose and how I resolved them
-##### dataTable - I had problems trying to get the dataTable to show just 1 instance of each game. Having read the documentation for Dc.js datatable i discovered they were slightly different to other Dc.js charts. The group attribute is used as a keying function for nesting and crossfilters can not be passed to it, the documentation also stated a group could be passed to the dimension attribute. In my dataTable I wanted to show a list of the 27 games played in the 2017 Hurling Championship, however when i created a games dimension the resulting dataTable had 1173 rows showing each game numerous times. When i tried to group the games and pass it to the dimension attribute the result was a dataTable with 1 line saying 'undefined'. With the help of my Tutor Yoni Lavi he informed me of a trick to omit the column attribute from the graph. When i omited the column, it gave me just 1 instance of each game but some games were missing, to fix this I need set the size of the dataTable to 1173 the size of my database. This gave me a list of all 27 games played in 2017
+##### I had problems trying to get the dataTable to show just 1 instance of each game. Having read the documentation for Dc.js datatable i discovered they were slightly different to other Dc.js charts. The group attribute is used as a keying function for nesting and crossfilters can not be passed to it, the documentation also stated a group could be passed to the dimension attribute. In my dataTable I wanted to show a list of the 27 games played in the 2017 Hurling Championship, however when i created a games dimension the resulting dataTable had 1173 rows showing each game numerous times. When i tried to group the games and pass it to the dimension attribute the result was a dataTable with 1 line saying 'undefined'. With the help of my Tutor Yoni Lavi he informed me of a trick to omit the column attribute from the graph. When i omited the column, it gave me just 1 instance of each game but some games were missing, to fix this I need set the size of the dataTable to 1173 the size of my database. This gave me a list of all 27 games played in 2017
 
 ## WORK BASED OFF OTHER CODE
 ##### I didn't base my work off other code, I used only what i had learnt in my course and the official documentation for dc.js dataTable's
 
 ## THE FUTURE
-##### I hope to develop on this project in the future to include Gaelic Football score statistics For this years Hurling and Football Championship I intend to keep a database up to date on a weekly bases.
+##### I hope to develop on this project in the future to include Gaelic Football score statistics For this years Hurling and Football Championship. I intend to keep a database up to date on a weekly bases.
 
 ## VERSION CONTROL
 ##### GitHub: I created a repository called HurlingChampionship2017 in GitHub and pushed my project to this repository regularly. [view repository]( https://github.com/sarahbarron/HurlingChampionship2017).
 
 ## HOW THE PROJECT WAS DEPLOYED
-###### - From the command line I created an app using the Heroku create command. This also created a remote Git. <br> - I got the Flask app running in the cloud. This involved installing a python package called gunicorn, which is used for running http servers on unix based operating systems, I needed this as Heroku servers use Ubuntu server. Firstly I activated the virtual environment and then installed gunicorn.<br> - To make sure all my dependencies were added to my requirements.txt file I used the pip freeze command and then synchronized them. <br> - My dependencies are click==6.7, Flask==0.12.2, gunicorn==19.7.1, itsdangerous==0.24, Jinja2==2.10, MarkupSafe==1.0, pymongo==3.6.0 and Werkzeug==0.13 <br> - I then created a Procfile and Procfile.Windows, these are files that tell Heroku what to do once the project has been deployed.<br> - I did my initial add, commit and push of my project to the git created by Heroku. <br> - I started a dyno/worker a thread to run in the background infinitly to keep my app running. <br> - I installed a Heroku addon called mLab to host and monitor my database 24/7 and back it up daily. This involved creating a user, connecting to the database, creating a collection, importing the csv file and making a connection from the Mongo Management Studio.<br> - I imported the os module in my python file, this module allows the code to interact with the underlying operating system you are using, In my file I am using the getenv method this obtains environment variables from the host operating system. <br> - I added my environment variables to my heroku app and to my Flask project in Pycharm. <br> - I updated the python file and did a final add, commit and push to the Heroku Git and opened the dashboard in the browser using the Heroku open command.<br> My project can be viewed fully deployed on Heroku [here](https://arcane-beyond-23253.herokuapp.com/).
+##### - From the command line I created an app using the Heroku create command. This also created a remote Git. 
+##### - I got the Flask app running in the cloud. This involved installing a python package called gunicorn, which is used for running http servers on unix based operating systems, I needed this as Heroku servers use Ubuntu server. Firstly I activated the virtual environment and then installed gunicorn.
+##### - To make sure all my dependencies were added to my requirements.txt file I used the pip freeze command and then synchronized them.
+##### My dependencies are 
+- click==6.7, 
+- Flask==0.12.2, 
+- gunicorn==19.7.1, 
+- itsdangerous==0.24, 
+- Jinja2==2.10,
+- MarkupSafe==1.0,
+- pymongo==3.6.0 and 
+- Werkzeug==0.13 
+##### - I then created a Procfile and Procfile.Windows, these are files that tell Heroku what to do once the project has been deployed.
+##### - I did my initial add, commit and push of my project to the git created by Heroku.
+##### - I started a dyno/worker a thread to run in the background infinitly to keep my app running.
+##### - I installed a Heroku addon called mLab to host and monitor my database 24/7 and back it up daily. This involved creating a user, connecting to the database, creating a collection, importing the csv file and making a connection from the Mongo Management Studio.
+##### - I imported the os module in my python file, this module allows the code to interact with the underlying operating system you are using, In my file I am using the getenv method this obtains environment variables from the host operating system.
+##### - I added my environment variables to my heroku app and to my Flask project in Pycharm.
+##### - I updated the python file and did a final add, commit and push to the Heroku Git and opened the dashboard in the browser using the Heroku open command.
+##### My project can be viewed fully deployed on Heroku [here](https://arcane-beyond-23253.herokuapp.com/).
