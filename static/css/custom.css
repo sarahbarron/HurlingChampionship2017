@@ -3,32 +3,11 @@
     align-content: center;
 }
 
-/*the picture at the start of the project*/
-.firstPic{
-  max-height: 747px;
-  width: 100%;
-}
-
-/*background picture*/
-.container-fluid{
-    background-image: url("pictures/grass.jpg");
-    background-size: 100%;
-    background-repeat: repeat;
-}
-
 /*navigation bar*/
 #mynav{
     background-image: url("pictures/background.jpg");
     opacity: 0.7;
     background-size: cover;
-}
-
-/*application*/
-body.application{
-    background-color: black;
-    padding: 0px 0px;
-    font-family:  focoregular;
-    border-color: darkslategray;
 }
 
 /*navigation bar header*/
@@ -43,9 +22,60 @@ a.navbar-brand{
     padding-bottom: 50px;
 }
 
+/*navigation bar brand*/
+.navbar-brand{
+    width:85%;
+    font-size: 25px;
+    padding:20px 0px 10px 0px;
+    text-align: center;
+}
+
+/*header tutorial button*/
+.intro_button{
+    height: 40px;
+    width: 200px;
+    margin-top: 20px;
+    border-radius: 20px;
+    background-color: #00FF61;
+    color:black;
+    font-size: 20px;
+    padding-bottom: 20px;
+}
+
+/*refresh button under all large charts*/
+.refresh-button{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: fooregular;
+    border-radius: 20px;
+    margin: 20px;
+    float: right;
+}
+
+/*application*/
+body.application{
+    background-color: black;
+    padding: 0px 0px;
+    font-family:  focoregular;
+    border-color: darkslategray;
+}
+
+/*the picture at the start of the project*/
+.firstPic{
+  max-height: 747px;
+  width: 100%;
+}
+
+/*background picture*/
+.container-fluid{
+    background-image: url("pictures/grass.jpg");
+    background-size: 100%;
+    background-repeat: repeat;
+}
+
 /* wrapper for the charts & the title*/
 .chart-wrapper .chart-title {
-    font-size: 30px;
+    font-size: 25px;
     text-align: center;
     background-color: darkslategray;
     color: floralwhite;
@@ -56,24 +86,19 @@ a.navbar-brand{
     border: 5px solid darkslategray;
 }
 
-/*navigation bar brand*/
-.navbar-brand{
-    width:85%;
-    font-size:40px;
-    padding:20px 0px 10px 0px;
-    text-align: center;
+/*font colour of the players on the line graph*/
+.dc-chart g.row text {
+    fill: #1d2c4b;
 }
 
-/*tutorial button*/
-button{
-    height: 40px;
-    width: 200px;
-    margin-top: 20px;
-    border-radius: 20px;
-    background-color: #00FF61;
-    color:black;
-    font-size: 20px;
-    padding-bottom: 20px;
+/*padding before charts*/
+#startCharts{
+    padding:0px 50px;
+}
+
+/*margin at the bottom of the charts on the right*/
+.col-lg-7{
+    margin-bottom: 70px;
 }
 
 /*Total Goals & Total Points Number display*/
@@ -94,22 +119,16 @@ button{
 #total-goals-nd, #total-points-nd{
     padding-top: 15%;
 }
+
 /*margin at the bottom of the Number display div*/
 .numDispDiv{
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 
-/*font colour of the players on the line graph*/
-.dc-chart g.row text {
-    fill: #1d2c4b;
-}
-/*padding before charts*/
-#startCharts{
-    padding:0px 50px;
-}
-/*margin at the bottom of the charts on the right*/
-.col-lg-7{
-    margin-bottom: 100px;
+/*Pie charts*/
+.dc-chart .pie-slice{
+    font-size: 18px;
+    fill:darkslategray;
 }
 
 /*dataTable*/
@@ -130,17 +149,12 @@ th, td {
 /*table hover background color*/
 tr:hover {background-color:#f5f5f5;}
 
-/*Pie charts*/
-.dc-chart .pie-slice{
-    font-size: 18px;
-    fill:darkslategray;
+/* the text on the tour of the site*/
+data-intro{
+    font-weight: normal;
 }
 
 /*paragraph in the footer*/
 P{
     text-align: center;
-}
-
-data-intro{
-    font-weight: normal;
 }

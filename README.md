@@ -61,9 +61,8 @@
 ##### I tested each graph visually to make sure
 - everything loaded properly
 - when i selected an element on each graph the corresponding graphs responded and showed accurate statistics.
-- The page was responsive to window minimising and maximising.
 
-##### In the developer tools I tested that the website was responsive in mobile mode.
+##### In the developer tools I tested that the website was responsive in tablet and mobile mode.
 
 ##### I ran all my files through a validation test using
 - [W3C](https://validator.w3.org/) for HTML.
@@ -79,7 +78,8 @@
 ## THE FUTURE
 ##### I hope to develop on this project in the future to include Gaelic Football score statistics. For this years Hurling and Football Championship I intend to keep a database up to date on a weekly bases.
 
-## HOW THE PROJECT WAS DEPLOYED
+## VERSION CONTROL
+##### GitHub: I created a repository called HurlingChampionship2017 in GitHub and pushed my project to this repository regularly. [view repository]( https://github.com/sarahbarron/HurlingChampionship2017).
 
-##### I created a repository called HurlingChampionship2017 in GitHub and pushed my project to this repository [view repository]( https://github.com/sarahbarron/HurlingChampionship2017).
+## HOW THE PROJECT WAS DEPLOYED
 ##### When I finished the project I deployed it on Heroku 

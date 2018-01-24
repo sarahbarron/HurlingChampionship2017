@@ -25,7 +25,15 @@
     <div  id="outer" class="container-fluid">
 
         <!-- Picture of hurler at the beginning -->
-        <div class="firstPic">
+        <div class="firstPic"  data-intro="I hope you enjoy using this app to take a closer look at the scores from
+             the All Ireland Hurling Championship 2017.<br> You can click on any player, team, stage of the
+             championship, or type of score to take a closer look at your selection. For example. <br>1. Select a player
+             & see on the other charts how many goals & points this player has scored, how many scores
+             they scored in each stage of the championship, how many of each scored type he scored and in which games
+             he scored.<br> 2. Select a stage of the competition and see on the other graphs which players scored
+            during this stage, how many goals and points were scored during this stage, the breakdown of types of scores
+            scored during this stage, the teams that scored and the games that occured during this stage.<br> And so on
+            for selections on score types, and teams."data-position="right">
             <img class="firstPic img-responsive" src="static/css/pictures/firstPic.jpg" alt="galway all-ireland-2017">
         </div>
 
@@ -39,12 +47,15 @@
                     <div class="col-lg-5 col-md-12 col-sm-12">
                         <div class="chart-wrapper">
                             <div class="chart-title" data-step="3" data-intro="This Row Chart shows all players who
-                                scored during the 2017 Hurling Championship & how many scores they scored"
-                                data-position="right">
-                                Players who scored during the 2017 Hurling Championship
+                                 scored during the 2017 Hurling Championship & how many scores they scored"
+                                 data-position="right">
+                                 Players who scored during the 2017 Hurling Championship
                             </div>
                             <div class="chart-stage">
                                 <div id="players-chart"></div>
+                                <button class="refresh-button" data-step="8" data-intro="When you have made a selection on
+                                one or more of the graphs, you can click the reset charts button to reload all data"
+                                data-position="right" onclick="refresh()">Reset Charts</button>
                             </div>
                         </div>
                     </div>
@@ -57,8 +68,8 @@
                                 Total Goals
                             </div>
                             <div class="chart-stage numberDisplay" data-step="1" data-intro="This shows the total number
-                                  of goals scored in the 2017 Hurling Championship for your selection " data-position="right">
-                                <div id="total-goals-nd"></div>
+                                 of goals scored in the 2017 Hurling Championship for your selection " data-position="right">
+                                 <div id="total-goals-nd"></div>
                             </div>
                         </div>
                     </div>
@@ -71,13 +82,12 @@
                                 Total Points
                             </div>
                             <div class="chart-stage numberDisplay" data-step="2" data-intro="This shows the total number
-                                  of points scored in the 2017 Hurling Championship for your selection " data-position="left">
-                                <div id="total-points-nd"></div>
+                                 of points scored in the 2017 Hurling Championship for your selection " data-position="left">
+                                 <div id="total-points-nd"></div>
                             </div>
                         </div>
                     </div>
                     <!-- END Points number display -->
-
 
                     <!-- Stage Of Championship Pie chart -->
                     <div class="col-lg-7 col-md-12 col-sm-12">
@@ -86,14 +96,14 @@
                                 Stage Of Championship
                             </div>
                             <div class="chart-stage" data-step="4" data-intro="This pie chart shows the stages of the
-                                  Hurling Championship and how many scores were scored during each stage"
+                                 Hurling Championship and how many scores were scored during each stage"
                                  data-position="left">
-                                <div id="stage-of-all-ireland-chart"></div>
+                                 <div id="stage-of-all-ireland-chart"></div>
+                                 <button class="refresh-button" onclick="refresh()">Reset Charts</button>
                             </div>
                         </div>
                     </div>
                     <!-- END Stage of Championship Pie Chart-->
-
 
                     <!-- Score Breakdown Pie Chart-->
                     <div class="col-lg-7 col-md-12 col-sm-12">
@@ -102,9 +112,10 @@
                                 Score Breakdown
                             </div>
                             <div class="chart-stage" data-step="5" data-intro="This pie chart shows a breakdown of the
-                                    type of scores that can be scored in Hurling and it shows how many of each type was
-                                    scored in 2017" data-position="left">
+                                 type of scores that can be scored in Hurling and it shows how many of each type was
+                                 scored in 2017" data-position="left">
                                 <div id="score-breakdown-chart"></div>
+                                <button class="refresh-button" onclick="refresh()">Reset Charts</button>
                             </div>
                         </div>
                     </div>
@@ -120,6 +131,7 @@
                                  played in the 2017 Hurling Championship and shows how many points they scored & how
                                  many goals they scored" data-position="left">
                                 <div id="teams-chart"></div>
+                                <button class="refresh-button" onclick="refresh()">Reset Charts</button>
                             </div>
                         </div>
                     </div>
@@ -129,10 +141,10 @@
                     <div class="col-lg-7 col-md-12 col-sm-12">
                         <div class="chart-wrapper">
                             <div class="chart-title">
-                                Games played
+                                Games & Results
                             </div>
                             <div class="chart-stage" data-step="7" data-intro="This table shows the games that took
-                                 place during the 2017 Hurling Championship" data-position="left">
+                                 place during the 2017 Hurling Championship and the results" data-position="left">
                             </div>
                             <table id="games-table">
                                 <thead>
