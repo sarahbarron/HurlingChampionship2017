@@ -136,7 +136,7 @@ function makeGraphs(error, HurlingStats) {
     //The stages of the Hurling Championship Pie Chart
     stageOfAllIrelandPieChart
         .ordinalColors(["#C5D5EA", "#7EBDC2", "#F7EDE2", "#B3C5D7", "#D8E1E9", "#B8DBDD", "#82A8D1"])
-        .height(550)
+        .height(500)
         .width(800)
         .radius(250)
         .transitionDuration(1500)
@@ -147,7 +147,7 @@ function makeGraphs(error, HurlingStats) {
     //The breakdown of types of scores that can be scored in hurling pie chart
     scoreBreakdownChart
         .ordinalColors(["#C5D5EA", "#7EBDC2", "#F7EDE2", "#B3C5D7", "#D8E1E9", "#82A8D1", "#B8DBDD", "#E1D8CE"])
-        .height(550)
+        .height(500)
         .width(800)
         .radius(250)
         .transitionDuration(1500)
