@@ -46,11 +46,11 @@
                      <!-- players row chart - shows all players who scored during 2017-->
                     <div class="col-lg-5 col-md-12 col-sm-12">
                         <div class="chart-wrapper">
-                            <div class="chart-title" >
+                            <div class="chart-title" data-step="1" data-intro="This row chart shows all players who
+                                 scored during the 2017 Hurling Championship" data-position="right">
                                  Players who scored during the 2017 Hurling Championship
                             </div>
-                            <div class="chart-stage" data-step="1" data-intro="This row chart shows all players who
-                                 scored during the 2017 Hurling Championship" data-position="right">
+                            <div class="chart-stage" >
                                 <div id="players-chart"></div>
                                 <button class="refresh-button" data-step="8" data-intro="When you have made a selection on
                                 one or more of the graphs, you can click the reset charts button to reload all data"
@@ -146,13 +146,13 @@
                             </div>
                             <div class="chart-stage" data-step="7" data-intro="This table shows the games that took
                                  place during the 2017 Hurling Championship and the results" data-position="left">
+                                <table id="games-table">
+                                    <thead>
+                                        <tr class="header">
+                                        </tr>
+                                    </thead>
+                                </table>
                             </div>
-                            <table id="games-table">
-                                <thead>
-                                    <tr class="header">
-                                    </tr>
-                                </thead>
-                            </table>
                         </div>
                     </div>
                     <!-- end games table -->
