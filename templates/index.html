@@ -26,15 +26,14 @@
     <div  id="outer" class="container-fluid">
 
         <!-- Picture of hurler at the beginning -->
-        <div class="firstPic"  data-intro="I hope you enjoy using this app to take a closer look at the scores from
-             the All Ireland Hurling Championship 2017.<br> You can click on any player, team, stage of the
-             championship, or type of score to take a closer look at your selection. For example. <br>1. Select a player
-             & see on the other charts how many goals & points this player has scored, how many scores
-             they scored in each stage of the championship, how many of each scored type he scored and in which games
-             he scored.<br> or <br>2. Select a stage of the competition and see on the other graphs which players scored
-            during this stage, how many goals and points were scored during this stage, the breakdown of types of scores
-            scored during this stage, the teams that scored and the games that occured during this stage.<br> And so on
-            for selections on score types, and teams." data-position="right">
+        <div class="firstPic"  data-intro="Click on a <br> - player <br> - Stage of Championship <br> - Breakdown of
+        score <br> or a <br> - team <br> to see your selection in closer detail, all charts are linked so for example
+        if you click on a player the other charts will update to show you the details for that player i.e the
+        number displays will update to show you that players total goals and total points scored in the 2017 Championship,
+        the stage of championship will update to show you during what stage of the championship the player scored,
+        the breakdown of scores will show you how that player scored and the games & results will show you the games
+        that the player scored in. <br> So feel free to explore this app, and hover over the bars and pie slices to see
+        accurate score values. " data-position="right">
             <img class="firstPic img-responsive" src="static/css/pictures/firstPic.jpg" alt="galway all-ireland-2017">
         </div>
 
@@ -44,7 +43,23 @@
 
                 <div class="row" id="startCharts" >
 
-
+                     <!-- players row chart - shows all players who scored during 2017-->
+                    <div class="col-lg-5 col-md-12 col-sm-12">
+                        <div class="chart-wrapper">
+                                 Players who scored during the 2017 Hurling Championship
+                            </div>
+                            <div class="chart-title" data-step="1" data-intro="This row chart shows all players who
+                                 scored during the 2017 Hurling Championship, hover over each players bar to see how
+                                 much they scored" data-position="right">
+                            <div class="chart-stage">
+                                <div id="players-chart"></div>
+                                <button class="refresh-button" data-step="8" data-intro="When you have made a selection on
+                                one or more of the graphs, you can click the reset charts button to reload all data"
+                                data-position="right" onclick="refresh()">Reset Charts</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end players row chart-->
 
                     <!-- Total Goals Number Display-->
                     <div class="col-lg-3 col-md-6 col-sm-6 numDispDiv">
@@ -52,7 +67,7 @@
                             <div class="chart-title">
                                 Total Goals
                             </div>
-                            <div class="chart-stage numberDisplay" data-step="1" data-intro="This shows the total number
+                            <div class="chart-stage numberDisplay" data-step="2" data-intro="This shows the total number
                                  of goals scored in the 2017 Hurling Championship for your selection " data-position="right">
                                  <div id="total-goals-nd"></div>
                             </div>
@@ -66,30 +81,15 @@
                             <div class="chart-title">
                                 Total Points
                             </div>
-                            <div class="chart-stage numberDisplay" data-step="2" data-intro="This shows the total number
-                                 of points scored in the 2017 Hurling Championship for your selection " data-position="left">
+                            <div class="chart-stage numberDisplay" data-step="3" data-intro="This shows the total number
+                                 of points scored in the 2017 Hurling Championship for your selection "
+                                 data-position="left">
                                  <div id="total-points-nd"></div>
                             </div>
                         </div>
                     </div>
                     <!-- END Points number display -->
-                    <!-- players row chart - shows all players who scored during 2017-->
-                    <div class="col-lg-5 col-md-12 col-sm-12">
-                        <div class="chart-wrapper">
-                            <div class="chart-title" data-step="3" data-intro="This row chart shows all players who
-                                 scored during the 2017 Hurling Championship & how many scores they scored"
-                                 data-position="right">
-                                 Players who scored during the 2017 Hurling Championship
-                            </div>
-                            <div class="chart-stage">
-                                <div id="players-chart"></div>
-                                <button class="refresh-button" data-step="8" data-intro="When you have made a selection on
-                                one or more of the graphs, you can click the reset charts button to reload all data"
-                                data-position="right" onclick="refresh()">Reset Charts</button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end players row chart-->
+
 
                     <!-- Stage Of Championship Pie chart -->
                     <div class="col-lg-7 col-md-12 col-sm-12">
