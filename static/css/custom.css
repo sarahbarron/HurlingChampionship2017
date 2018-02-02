@@ -48,6 +48,7 @@ a.navbar-brand{
     margin: 50px auto;
     width: 80%;
     padding:20px 0px;
+    font-weight: bold;
 }
 /*refresh button under all large charts*/
 .refresh-button{
