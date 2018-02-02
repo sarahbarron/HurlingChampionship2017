@@ -42,6 +42,13 @@ a.navbar-brand{
     padding-bottom: 20px;
 }
 
+/*guided tour button under the picture*/
+#button-under-pic{
+    display: block;
+    margin: 50px auto;
+    width: 80%;
+    padding-top:20px;
+}
 /*refresh button under all large charts*/
 .refresh-button{
     font-size: 20px;
