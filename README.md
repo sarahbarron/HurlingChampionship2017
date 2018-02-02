@@ -70,6 +70,8 @@
 - [W3C](https://jigsaw.w3.org/css-validator/) for CSS.
 - [JS Hint](http://jshint.com/) for JavaScript.
 
+##### User testing 
+I sent some hurling fanatic friends and family a link to my project and asked them to give me honest feedback. From their feedback it seemed that the button in the navigation bar was not grabbing their attention they were scrolling down to see the charts first and it was only at the end they were noticing the start tour button and were not awear they could click on the charts. I therefore added a very large start tour button underneath the picture and just before the charts in bright green, to draw the users attention to do the tour prior to viewing the charts. I also left the start tour button in the navigation bar as this bar scrolls with the user therefore the button is always in available.
 ## Some problems that arose and how I resolved them
 ##### I had problems trying to get the dataTable to show just 1 instance of each game. Having read the documentation for Dc.js datatable i discovered they were slightly different to other Dc.js charts. The group attribute is used as a keying function for nesting and crossfilters can not be passed to it, the documentation also stated a group could be passed to the dimension attribute. In my dataTable I wanted to show a list of the 27 games played in the 2017 Hurling Championship, however when i created a games dimension the resulting dataTable had 1173 rows showing each game numerous times. When i tried to group the games and pass it to the dimension attribute the result was a dataTable with 1 line saying 'undefined'. With the help of my Tutor Yoni Lavi he informed me of a trick to omit the column attribute from the graph. When i omited the column, it gave me just 1 instance of each game but some games were missing, to fix this I need set the size of the dataTable to 1173 the size of my database. This gave me a list of all 27 games played in 2017
 
@@ -101,5 +103,5 @@
 ##### - I installed a Heroku addon called mLab to host and monitor my database 24/7 and back it up daily. This involved creating a user, connecting to the database, creating a collection, importing the csv file and making a connection from the Mongo Management Studio.
 ##### - I imported the os module in my python file, this module allows the code to interact with the underlying operating system you are using, In my file I am using the getenv method this obtains environment variables from the host operating system.
 ##### - I added my environment variables to my heroku app and to my Flask project in Pycharm.
-##### - I updated the python file and did a final add, commit and push to the Heroku Git and opened the dashboard in the browser using the Heroku open command.
+##### - I updated the python file and did a final add, commit and push to the Heroku Git.
 ##### My project can be viewed fully deployed on Heroku [here](https://arcane-beyond-23253.herokuapp.com/).
