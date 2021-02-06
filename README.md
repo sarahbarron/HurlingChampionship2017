@@ -90,13 +90,15 @@ I sent some hurling fanatic friends and family a link to my project and asked th
 ##### - To make sure all my dependencies were added to my requirements.txt file I used the pip freeze command and then synchronized them.
 ##### My dependencies are 
 - click==6.7, 
-- Flask==0.12.2, 
+- Flask==0.12.2, (updated to flask>=1.0.0 due to vulnerabilities)
 - gunicorn==19.7.1, 
 - itsdangerous==0.24, 
-- Jinja2==2.10,
+- Jinja2==2.10, (updated to Jinja2>=2.10.1 due to vulnerabilities)
 - MarkupSafe==1.0,
 - pymongo==3.6.0 and 
-- Werkzeug==0.13 
+- Werkzeug==0.13 (updated to werkzeug>=0.15.3 due to vulnerabilities)
+
+- firebase_admin (added in 2021 when deployed to Cloud Run)
 ##### - I then created a Procfile and Procfile.Windows, these are files that tell Heroku what to do once the project has been deployed.
 ##### - I did my initial add, commit and push of my project to the git created by Heroku.
 ##### - I started a dyno/worker a thread to run in the background infinitly to keep my app running.
@@ -105,3 +107,9 @@ I sent some hurling fanatic friends and family a link to my project and asked th
 ##### - I added my environment variables to my heroku app and to my Flask project in Pycharm.
 ##### - I updated the python file and did a final add, commit and push to the Heroku Git.
 ##### My project can be viewed fully deployed on Heroku [here](https://arcane-beyond-23253.herokuapp.com/).
+
+### 2021 Migration to Google Cloud Run
+During 2020 the MongoDB app mLab that I was using to host my database was depreciated from Heroku. I was undertaking 
+another project and was using Firebase databases, I therefore decided to migrate to Google Cloud Run and integrate it with the Firebase cloud database.
+[Can be now found hosted in Google Cloud](https://todo-lqp35skdla-uc.a.run.app)
+The data still needs to be transferred over to Firebase Cloud and should be available shortly.
