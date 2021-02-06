@@ -21,6 +21,11 @@ function makeGraphs(error, HurlingStats) {
 
     //  DIMENSIONS
 
+    // Year
+    var yearDim = ndx.dimension(function (d) {
+        return d["year"];
+    });
+
     //Players dimensions (the players team , first name & surname)
     var playersDim = ndx.dimension(function (d) {
         return (d['team'] + " - " + d['first_name'] + " " + d['surname']);
@@ -57,6 +62,9 @@ function makeGraphs(error, HurlingStats) {
     });
 
     //GROUPING
+
+    // year
+    var yearGroup = yearDim.group();
 
      //player row chart total scores per player (points + goals*3 (as each goal is equivalent to 3 points in hurling))
     var playerTotalScoreGroup = playersDim.group().reduceSum(function (d) {
@@ -98,6 +106,8 @@ function makeGraphs(error, HurlingStats) {
 
     //CHARTS
 
+    // Year
+    var selectYear = dc.selectMenu('#menu-select');
     //players who scored in the All Ireland Championship row chart
     var playersChart = dc.rowChart("#players-chart");
     //Total goals number display
@@ -112,6 +122,11 @@ function makeGraphs(error, HurlingStats) {
     var teamsChart = dc.barChart("#teams-chart");
     //games played in the 2017 All Ireland Championship & the result
     var gamesTable = dc.dataTable("#games-table");
+
+    // Year
+    selectYear
+        .dimension(yearDim)
+        .group(yearGroup);
 
     //Players who scored in the All Ireland Championship row chart
     playersChart

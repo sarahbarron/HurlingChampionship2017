@@ -167,3 +167,21 @@ data-intro{
 P{
     text-align: center;
 }
+
+/* year select menu*/
+.dc-select-menu{
+    width: 100%;
+    border: none;
+    position: relative;
+    height: 31px;
+    font-size: 25px;
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 4px;
+    padding-bottom: 0px;
+    margin-bottom: 50px;
+}
+
+#menu-select{
+    float: none;
+}
